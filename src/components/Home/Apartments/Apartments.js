@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import img from '../../../images/random-apartment.jpg';
 import Card from './Card';
+import { useHistory } from 'react-router';
 
 const randomData = [
     {
@@ -38,6 +38,7 @@ const randomData = [
 ]
 
 const Apartments = () => {
+    const history = useHistory();
     return (
         <div className="App apartment-background">
             <div className="mt-5 Featured-header">
@@ -57,6 +58,13 @@ const Apartments = () => {
                         <Card data={randomData[2]} />
                     </div>
                 </section>
+
+                <div>
+                    <button onClick={() => history.push('/explore')} className="btn btn-info w-75 font-weight-bold">
+                        EXPLORE
+                        <FontAwesomeIcon className="icon-color text-white ml-2" icon={faArrowRight} />
+                        </button>
+                </div>
 
             </div>
         </div>

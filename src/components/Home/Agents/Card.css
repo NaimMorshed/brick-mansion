@@ -1,0 +1,33 @@
+.agent-container {
+    margin: 20px;
+}
+
+.agent-container img {
+    width: 100%;
+    height: 220px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    object-fit: cover;
+    border-bottom: 5px solid #01798b;
+}
+
+.parent-container {
+    width: 250px;
+    border-radius: 5px;
+    background-color: #17A2B8;
+}
+
+.agent-name {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.social img{
+    width: 32px;
+    height: 32px;
+    border: 2px solid black;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+}

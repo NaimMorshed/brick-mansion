@@ -7,8 +7,11 @@ import './HeaderMain.css';
 import rate from '../../../images/whatweare/rate.png';
 import rent from '../../../images/whatweare/rent.png';
 import pin from '../../../images/whatweare/pin.png';
+import { useHistory } from 'react-router';
 
 const HeaderMain = () => {
+
+    const history = useHistory();
     
     return (
         <>
@@ -26,7 +29,7 @@ const HeaderMain = () => {
                         <h3>Discover Our Apartments</h3>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         <hr className="hr-carousel"/>
-                        <Button className="font-weight-bold" variant="outline-light">EXPLORE NOW</Button>{' '}
+                        <Button onclick={() => history.push('/explore')} className="font-weight-bold" variant="outline-light">EXPLORE NOW</Button>{' '}
                     </Carousel.Caption>
                 </Carousel.Item>
 
@@ -42,7 +45,7 @@ const HeaderMain = () => {
                         <h3>Good Service Is Our Passion</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <hr className="hr-carousel"/>
-                        <Button className="font-weight-bold" variant="outline-light">EXPLORE NOW</Button>{' '}
+                        <Button onclick={() => history.push('/explore')} className="font-weight-bold" variant="outline-light">EXPLORE NOW</Button>{' '}
                     </Carousel.Caption>
                 </Carousel.Item>
 
@@ -58,7 +61,7 @@ const HeaderMain = () => {
                         <h3>Find Your Desired Home</h3>
                         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                         <hr className="hr-carousel"/>
-                        <Button className="font-weight-bold" variant="outline-light">EXPLORE NOW</Button>{' '}
+                        <Button onclick={() => history.push('/explore')} className="font-weight-bold" variant="outline-light">EXPLORE NOW</Button>{' '}
                     </Carousel.Caption>
                 </Carousel.Item>
 

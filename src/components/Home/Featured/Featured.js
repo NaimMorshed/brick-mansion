@@ -24,7 +24,7 @@ const Featured = () => {
                         <p>Berlin</p>
                     </div>
                     <div className="image3 image-common">
-                        <p>Hiedelberg</p>
+                        <p>Heidelberg</p>
                     </div>
                     <div className="image4 image-common">
                         <p>Rome</p>
