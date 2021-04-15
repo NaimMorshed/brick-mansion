@@ -1,0 +1,21 @@
+.logo-rounded {
+    width: 100px;
+    border-radius: 10%;
+}
+
+.navbar-custom {
+    background-color: rgb(255, 255, 255);
+}
+
+@media (min-width: 991.98px) {
+    .logo-rounded {
+        width: 100px;
+        border-radius: 10%;
+        position: relative;
+        top: 20px;
+    }
+    .navbar-custom {
+        background-color: rgb(255, 255, 255);
+        height: 60px;
+    }
+}

@@ -1,0 +1,68 @@
+.Featured-header {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.featured-background {
+    margin-top: 60px;
+    padding: 30px 0;
+    background-image: url(../../../images/featured/featured-city.jpg);
+    box-shadow:inset 0 0 0 2000px #ffffffc5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.city-container {
+    padding: 40px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.image-common {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 75%;
+    box-shadow:inset 0 0 0 2000px #00000086;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 20vh;
+    transition: 0.5s;
+}
+.image-common:hover {
+    box-shadow:inset 0 0 0 2000px #000000b2;
+    background-size: 110%;
+}
+
+.image1 {
+    background-image: url(../../../images/city/amsterdam.jpg);
+}
+
+.image2 {
+    background-image: url(../../../images/city/berlin.jpg);
+}
+
+.image3 {
+    background-image: url(../../../images/city/hiedelberg.jpg);
+}
+
+.image4 {
+    background-image: url(../../../images/city/rome.jpg);
+}
+
+.image-common > p {
+    cursor: default;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 8px;
+    transition: 0.5s;
+    border: 2px solid white;
+    padding: 10px;
+}
