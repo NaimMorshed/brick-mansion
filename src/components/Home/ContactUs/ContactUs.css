@@ -1,0 +1,46 @@
+.parent-contact {
+    padding-top: 60px;
+}
+
+.contact-background {
+    background-image: url(../../../images/contactus/contactus-back.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 50vh;
+}
+
+.input-custom {
+    padding: 10px 20px;
+    width: 80%;
+    border: 2px solid lightblue;
+    border-radius: 8px;
+    background-color: white;
+    margin: 10px;
+}
+
+.input-big {
+    padding: 50px 20px;
+    width: 80%;
+    border: 2px solid lightblue;
+    border-radius: 8px;
+    background-color: white;
+    margin: 10px;
+}
+
+.increase-icon {
+    font-size: 34px;
+}
+
+.border {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.bg-custom {
+    background-color: rgba(165, 165, 165, 0.425);
+}
+
+.custom-padding {
+    padding-bottom: 110px;
+    padding-top: 5px;
+}

@@ -9,6 +9,11 @@
     border-top-right-radius: 5px;
     object-fit: cover;
     border-bottom: 5px solid #01798b;
+    transition: 0.3s ease;
+}
+
+.agent-container img:hover {
+    opacity: 0.5;
 }
 
 .parent-container {

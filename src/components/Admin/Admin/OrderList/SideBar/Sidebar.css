@@ -1,0 +1,50 @@
+.parent-section {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-image: url(../../../../../images/Admin/sidebar.jpg);
+    box-shadow:inset 0 0 0 2000px rgba(8, 13, 59, 0.849);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.img-section > img {
+    width: 50%;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.icon-custom {
+    font-size: 18px;
+}
+
+.list-child {
+    padding: 10px;
+    transition: 0.2s;
+}
+
+.list-child:hover {
+    background-color: rgba(255, 255, 255, 0.671);
+    color: black;
+    cursor: pointer;
+}
+
+.default-selection {
+    padding: 10px;
+    background-image: url(../../../../../images/Admin/admin-back.jpg);
+    box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.281);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    transition: 0.2s;
+}
+
+.default-selection:hover {
+    background-color: rgba(255, 255, 255, 0.671);
+    color: black;
+    cursor: pointer;
+}

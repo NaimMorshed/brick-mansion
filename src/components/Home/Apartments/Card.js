@@ -9,7 +9,7 @@ const Card = ({ data }) => {
             <div className="bg-info text-white">
 
                 {/* Image section */}
-                <div className="row-7"><img className="card-img" src={data.img} alt="" /></div>
+                <div style={{ position: 'relative' }} className="row-7"><img className="card-img" src={data.img} alt="" /></div>
 
                 {/* Second Section */}
                 <div className="row-md-3 row-sm-3">
@@ -60,6 +60,7 @@ const Card = ({ data }) => {
                 </div>
 
                 {/* ---End--- */}
+                
             </div>
         </section>
     );

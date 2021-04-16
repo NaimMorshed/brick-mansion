@@ -1,0 +1,35 @@
+.footer-background {
+    background-image: url(../../../images/world-map.jpg);
+    box-shadow:inset 0 0 0 2000px #000000c0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 20vh;
+}
+
+.heading-footer {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    border-left: 4px solid white;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.inner-text {
+    color: rgb(218, 218, 218);
+}
+
+.social-footer img{
+    width: 32px;
+    height: 32px;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.list {
+    margin-bottom: 20px;
+}

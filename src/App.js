@@ -8,6 +8,7 @@ import { createContext, useState } from 'react';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login';
 import Explore from './components/Explore/Explore';
+import Admin from './components/Admin/Admin/Admin';
 export const UserContext = createContext();
 
 function App() {
@@ -32,8 +33,12 @@ function App() {
             <Explore />
           </Route>
 
+          <Route path="/admin">
+            <Admin />
+          </Route>
+
           <Route exact path="/">
-            <Home />
+            <Admin />
           </Route>
 
           <Route path="*">
