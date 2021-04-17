@@ -11,7 +11,7 @@ import Footer from '../Footer/Footer';
 
 const Home = () => {
     return (
-        <div>
+        <div className="container-fluid">
             <Header />
             <HeaderMain />
             <Featured />
