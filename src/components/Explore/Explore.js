@@ -22,6 +22,20 @@ const Explore = () => {
             })
     }, [])
 
+    const bookNow = data => {
+        sessionStorage.setItem('area', data.area);
+        sessionStorage.setItem('bathrooms', data.bathrooms);
+        sessionStorage.setItem('garages', data.garages);
+        sessionStorage.setItem('img', data.img);
+        sessionStorage.setItem('location', data.location);
+        sessionStorage.setItem('name', data.name);
+        sessionStorage.setItem('price', data.price);
+        sessionStorage.setItem('rooms', data.rooms);
+        sessionStorage.setItem('token', data.token);
+        sessionStorage.setItem('contain', true);
+        alert("Flat added to booking, navigate to admin panel");
+    }
+
     return (
         <main>
             <Header />
@@ -33,7 +47,10 @@ const Explore = () => {
                         <div className="d-flex justify-content-center align-items-center p-2 flex-wrap">
                             {
                                 apartments.map(apartment =>
-                                    <Card data={apartment} />
+                                    <Card
+                                        data={apartment}
+                                        booking={() => bookNow(apartment)}
+                                    />
                                 )
                             }
                         </div>

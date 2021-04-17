@@ -37,18 +37,21 @@ const System = () => {
         <div>
             {
                 status === 'admin' ? <Admin />
-                : status === 'user' ? <User />
-                : <></>
+                    : status === 'user' ? <User />
+                        : <></>
             }
-            <section className="App">
-                <div className="App-header">
-                    <div className={classes.root}>
-                        <CircularProgress color="white" />
+            {
+                status === "" &&
+                <section className="App">
+                    <div className="App-header">
+                        <div className={classes.root}>
+                            <CircularProgress color="white" />
+                        </div>
+                        <br />
+                        <h3>Enough coding time to sit back and relax...</h3>
                     </div>
-                    <br />
-                    <h3>Enough coding time to sit back and relax...</h3>
-                </div>
-            </section>
+                </section>
+            }
         </div>
     );
 };

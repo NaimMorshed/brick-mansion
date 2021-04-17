@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import Explore from './components/Explore/Explore';
 import System from './components/Admin/System';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Profile from './components/Profile/Profile';
 export const UserContext = createContext();
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
 
           <Route path="/explore">
             <Explore />
+          </Route>
+
+          <Route path="/profile">
+            <Profile />
           </Route>
 
           <PrivateRoute path="/system">

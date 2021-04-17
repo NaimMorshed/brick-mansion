@@ -1,0 +1,31 @@
+.profile-background {
+    background-image: url(../../images/profile-background.jpg);
+    box-shadow:inset 0 0 0 2000px #0000009d;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.profile-background > img {
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid #041B42;
+}
+
+.profile-background > h1 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.profile-background > h5 {
+    opacity: 0.6;
+}
+
+.log-out-btn {
+    font-size: 14px;
+    padding: 10px 30px;
+    border: 0;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+}

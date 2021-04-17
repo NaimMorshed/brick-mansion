@@ -16,44 +16,26 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const randomData = [
-    {
-        img: img,
-        name: 'St. Villa',
-        location: 'West Road, Bl',
-        price: 470,
-        area: 400,
-        rooms: 4,
-        bathrooms: 3,
-        garages: 2
-    },
-    {
-        img: img,
-        name: 'South Bridge',
-        location: 'West Road, Bl',
-        price: 250,
-        area: 234,
-        rooms: 3,
-        bathrooms: 2,
-        garages: 1
-    },
-    {
-        img: img,
-        name: 'William Street',
-        location: 'West Road, Bl',
-        price: 300,
-        area: 234,
-        rooms: 3,
-        bathrooms: 2,
-        garages: 1
-    },
-]
-
 const Apartments = () => {
     const history = useHistory();
     const classes = useStyles();
     const [apartments, setApartments] = useState([]);
     const [wait, setWait] = useState(true);
+
+    const bookNow = data => {
+        sessionStorage.setItem('area', data.area);
+        sessionStorage.setItem('bathrooms', data.bathrooms);
+        sessionStorage.setItem('garages', data.garages);
+        sessionStorage.setItem('img', data.img);
+        sessionStorage.setItem('location', data.location);
+        sessionStorage.setItem('name', data.name);
+        sessionStorage.setItem('price', data.price);
+        sessionStorage.setItem('rooms', data.rooms);
+        sessionStorage.setItem('token', data.token);
+        sessionStorage.setItem('contain', true);
+        alert("Flat added to booking, navigate to admin panel");
+    }
+
     useEffect(() => {
         fetch('https://protected-citadel-86567.herokuapp.com/getData?token=root')
             .then(res => res.json())
@@ -71,6 +53,7 @@ const Apartments = () => {
                 alert(err);
             })
     }, [])
+
     return (
         <div className="App apartment-background">
             <div className="mt-5 Featured-header">
@@ -90,13 +73,16 @@ const Apartments = () => {
                             apartments.length < 3
                                 ?
                                 apartments.map(apartment =>
-                                    <Card data={apartment} />
+                                    <Card
+                                        data={apartment}
+                                        booking={() => bookNow(apartment)}
+                                    />
                                 )
                                 :
                                 <>
-                                    <Card data={apartments[0]} />
-                                    <Card data={apartments[1]} />
-                                    <Card data={apartments[2]} />
+                                    <Card data={apartments[0]} booking={() => bookNow(apartments[0])} />
+                                    <Card data={apartments[1]} booking={() => bookNow(apartments[1])} />
+                                    <Card data={apartments[2]} booking={() => bookNow(apartments[2])} />
                                 </>
                         }
                         {

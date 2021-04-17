@@ -11,6 +11,9 @@ const Card = (props) => {
     const editClick = () => {
         return props.edit();
     }
+    const bookNow = () => {
+        return props.booking();
+    }
     
     return (
         <section className="card-parent">
@@ -27,7 +30,7 @@ const Card = (props) => {
                     }
                     <div class="middle">
                         {
-                            data.status === 'BookNow' ? <div class="btn btn-danger">BOOK NOW</div>
+                            data.status === 'BookNow' ? <div onClick={bookNow} class="btn btn-danger">BOOK NOW</div>
                             : data.status === 'Admin' ? <><div onClick={editClick} class="btn btn-danger">Edit</div> <div onClick={deleteClick} class="btn btn-danger">Delete</div></>
                             : <></>
                         }

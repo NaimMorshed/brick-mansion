@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Child.css'
 import img from '../../../../../images/random-apartment.jpg';
 import Card from '../../../../Home/Apartments/Card';
+import { UserContext } from '../../../../../App';
 
 const randomData = [
     {
@@ -41,6 +42,20 @@ const randomData = [
 
 const Child = () => {
 
+    const [bookings, setBookings] = useState([]);
+    const [authentication, setAuthentication] = useContext(UserContext);
+
+    useEffect(() => {
+        fetch('https://protected-citadel-86567.herokuapp.com/getBookings?token='+authentication.email)
+            .then(res => res.json())
+            .then(data => {
+                setBookings(data)
+            })
+            .catch(err => {
+                alert(err);
+            })
+    }, [authentication.email])
+
     return (
         <main className="order-list-parent">
             {/* Top Bar */}
@@ -52,9 +67,9 @@ const Child = () => {
                 {/* CARD */}
                 <section>
                     <div className="d-flex justify-content-center align-items-center p-5 flex-wrap">
-                        <Card data={randomData[0]} />
-                        <Card data={randomData[1]} />
-                        <Card data={randomData[2]} />
+                        {
+                            bookings.map(data => <Card data={data} />)
+                        }
                     </div>
                 </section>
             </section>
