@@ -9,7 +9,22 @@ const Card = ({ data }) => {
             <div className="bg-info text-white">
 
                 {/* Image section */}
-                <div style={{ position: 'relative' }} className="row-7"><img className="card-img" src={data.img} alt="" /></div>
+                <div className="row-7 image-container">
+                    <img className="card-img" src={data.img} alt="" />
+                    {
+                        data.status === 'Pending' ? <span className="status-pending">Pending</span>
+                        : data.status === 'Booked' ? <span className="status-booked">Booked</span>
+                        : data.status === 'Cancelled' ? <span className="status-cancelled">Cancelled</span>
+                        : <></>
+                    }
+                    <div class="middle">
+                        {
+                            data.status === 'BookNow' ? <div class="btn btn-danger">BOOK NOW</div>
+                            : data.status === 'Admin' ? <><div class="btn btn-danger">Edit</div> <div class="btn btn-danger">Delete</div></>
+                            : <></>
+                        }
+                    </div>
+                </div>
 
                 {/* Second Section */}
                 <div className="row-md-3 row-sm-3">
@@ -60,7 +75,7 @@ const Card = ({ data }) => {
                 </div>
 
                 {/* ---End--- */}
-                
+
             </div>
         </section>
     );

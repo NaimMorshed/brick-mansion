@@ -1,17 +1,13 @@
 .card-parent {
     width: 400px;
     margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .card-img {
     width: 100%;
     height: 250px;
     transition: 0.3s ease;
-}
-
-.card-img:hover {
-    opacity: 0.5;
-    cursor: pointer;
 }
 
 .card-hr {
@@ -40,4 +36,61 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.status-pending {
+    position: absolute;
+    margin-left: -95px;
+    font-style: italic;
+    margin-top: 5px;
+    background-color: orange;
+    padding: 5px 15px;
+    border-radius: 0;
+}
+
+.status-booked {
+    position: absolute;
+    margin-left: -90px;
+    font-style: italic;
+    margin-top: 5px;
+    background-color: green;
+    padding: 5px 15px;
+    border-radius: 0;
+}
+
+.status-cancelled {
+    position: absolute;
+    margin-left: -106px;
+    font-style: italic;
+    margin-top: 5px;
+    background-color: red;
+    padding: 5px 15px;
+    border-radius: 0;
+}
+
+.image-container {
+    position: relative;
+}
+
+.card-parent:hover {
+    cursor: pointer;
+}
+.card-parent:hover .middle {
+    opacity: 1;
+    cursor: pointer;
+}
+.card-parent:hover .card-img {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
 }

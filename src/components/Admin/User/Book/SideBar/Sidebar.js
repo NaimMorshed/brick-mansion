@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../../../../images/logo/logo.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingBasket, faPlus, faUserPlus, faThLarge } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart, faComments, faList } from '@fortawesome/free-solid-svg-icons'
 
 const Sidebar = (props) => {
 
@@ -23,21 +23,17 @@ const Sidebar = (props) => {
             </section>
             {/* List section */}
             <section className={listParent}>
-                <div onClick={() => props.handler(0)} className={listChild}>
-                    <FontAwesomeIcon className={fontAwesome} icon={faShoppingBasket} />
-                    <span>Order List</span>
+                <div onClick={() => props.handler(0)} className={defaultSelection}>
+                    <FontAwesomeIcon className={fontAwesomeBlack} icon={faShoppingCart} />
+                    <span>Book</span>
                 </div>
                 <div onClick={() => props.handler(1)} className={listChild}>
-                    <FontAwesomeIcon className={fontAwesome} icon={faPlus} />
-                    <span>Add Apartment</span>
+                    <FontAwesomeIcon className={fontAwesome} icon={faList} />
+                    <span>Booking List</span>
                 </div>
-                <div onClick={() => props.handler(2)} className={defaultSelection}>
-                    <FontAwesomeIcon className={fontAwesomeBlack} icon={faUserPlus} />
-                    <span>Make Admin</span>
-                </div>
-                <div onClick={() => props.handler(3)} className={listChild}>
-                    <FontAwesomeIcon className={fontAwesome} icon={faThLarge} />
-                    <span>Manage Apartment</span>
+                <div onClick={() => props.handler(2)} className={listChild}>
+                    <FontAwesomeIcon className={fontAwesome} icon={faComments} />
+                    <span>Review</span>
                 </div>
             </section>
         </main>

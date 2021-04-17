@@ -1,66 +1,25 @@
-.order-list-parent {
-    background-image: url(../../../../../images/Admin/admin-back.jpg);
-    box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.281);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    box-sizing: border-box;
-    overflow: hidden;
+.hr-admin {
+    border-top: 4px solid rgb(14, 14, 112);
 }
 
-.top-bar {
-    width: 100%;
-    height: 55px;
-    background-image: url(../../../../../images/Admin/sidebar.jpg);
-    box-shadow:inset 0 0 0 2000px rgba(8, 13, 59, 0.849);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    overflow: hidden;
+form > h3 {
+    color:rgb(14, 14, 112);
+    border-bottom: 4px solid rgb(14, 14, 112);
+    padding: 5px 0;
+    width: 50%;
 }
 
-.top-bar > span {
-    font-size: 24px;
-    font-weight: bold;
-    border: 1px dashed rgb(153, 153, 153);
-    padding: 5px 20px;
-}
-
-.inner-section {
-    width: 100%;
-    height: 100%;
-    padding: 5% 6% 8% 5%;
-}
-
-.inner-section > div {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    border-radius: 20px;
-    box-sizing: border-box;
-    overflow: hidden;
-    padding: 30px 50px;
-}
-
-.table-head {
-    background-color: rgb(206, 206, 206);
-    padding: 13px;
-    border-radius: 20px;
+.input-form > input{
+    background-color:rgb(226, 226, 226);
+    border: 0;
+    border: 2px solid rgb(14, 14, 112);
     color: black;
-    margin-bottom: 30px;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 10px 10px 10px 0;
 }
 
-.table-head > div > h5 {
-    font-size: 22px;
-}
-
-.table-body {
-    margin: 20px 0;
+.submit-btn {
+    width: 50%;
+    margin-top: 50px;
 }
