@@ -7,7 +7,7 @@ const Card = ({ data }) => {
         <section className="review-card">
             <div>
                 <div className="image-div">  
-                    <img src={data.img} alt="" />
+                    <img src={data.photoUrl} alt="" />
                 </div>
                 <h2>{data.name}</h2>
                 <p>{data.review}</p>

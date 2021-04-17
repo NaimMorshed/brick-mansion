@@ -3,7 +3,15 @@ import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faTh, faBed, faToilet, faWarehouse } from '@fortawesome/free-solid-svg-icons'
 
-const Card = ({ data }) => {
+const Card = (props) => {
+    const data = props.data;
+    const deleteClick = () => {
+        return props.delete();
+    }
+    const editClick = () => {
+        return props.edit();
+    }
+    
     return (
         <section className="card-parent">
             <div className="bg-info text-white">
@@ -20,7 +28,7 @@ const Card = ({ data }) => {
                     <div class="middle">
                         {
                             data.status === 'BookNow' ? <div class="btn btn-danger">BOOK NOW</div>
-                            : data.status === 'Admin' ? <><div class="btn btn-danger">Edit</div> <div class="btn btn-danger">Delete</div></>
+                            : data.status === 'Admin' ? <><div onClick={editClick} class="btn btn-danger">Edit</div> <div onClick={deleteClick} class="btn btn-danger">Delete</div></>
                             : <></>
                         }
                     </div>

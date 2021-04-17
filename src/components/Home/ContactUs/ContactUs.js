@@ -7,7 +7,7 @@ import SendUsMessage from './SendUsMessage';
 
 const ContactUs = () => {
     return (
-        <div className="parent-contact">
+        <div id="contact" className="parent-contact">
             <div className="App contact-background custom-padding">
                 <div className="mt-5 Featured-header">
                     <h1>CONTACT US</h1>

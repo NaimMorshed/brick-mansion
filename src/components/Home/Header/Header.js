@@ -22,7 +22,7 @@ const Header = () => {
                 <Nav className="mr-auto">
                     <Nav.Link className="font-weight-bold" onClick={() => history.push('/')}>Home</Nav.Link>
                     <Nav.Link onClick={() => history.push('/explore')}>Explore</Nav.Link>
-                    <Nav.Link href="#about-us">About us</Nav.Link>
+                    <Nav.Link>About us</Nav.Link>
                     <Nav.Link href="#contact">Contact</Nav.Link>
                 </Nav>
                 <Nav>
@@ -31,8 +31,8 @@ const Header = () => {
                             authentication.loggedIn
                                 ?
                                 <div className="d-flex">
-                                    <Button onClick={() => history.push('/admin')} variant="outline-secondary">Admin</Button>
-                                    <Avatar className="ml-2" alt="user" src={authentication.photoUrl} />
+                                    <Button onClick={() => history.push('/system')} variant="outline-secondary">Admin</Button>
+                                    <Avatar onClick={() => history.push('/profile')}className="ml-2" alt="user" src={authentication.photoUrl} />
                                 </div>
                                 :
                                 <Button onClick={() => history.push('/login')} variant="outline-secondary">Login</Button>

@@ -47,7 +47,7 @@ const Child = () => {
         const answer = window.confirm("Are you sure you want to delete?");
         if (answer) {
             const id = props._id;
-            fetch(`http://localhost:5000/delete/${id}`, {
+            fetch(`https://protected-citadel-86567.herokuapp.com/delete/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
