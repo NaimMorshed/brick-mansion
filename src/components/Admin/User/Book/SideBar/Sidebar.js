@@ -29,7 +29,7 @@ const Sidebar = (props) => {
                 </div>
                 <div onClick={() => props.handler(1)} className={listChild}>
                     <FontAwesomeIcon className={fontAwesome} icon={faList} />
-                    <span>Booking List</span>
+                    <span>My Bookings</span>
                 </div>
                 <div onClick={() => props.handler(2)} className={listChild}>
                     <FontAwesomeIcon className={fontAwesome} icon={faComments} />

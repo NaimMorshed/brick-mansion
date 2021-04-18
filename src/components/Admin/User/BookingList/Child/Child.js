@@ -60,7 +60,7 @@ const Child = () => {
         <main className="order-list-parent">
             {/* Top Bar */}
             <section className="top-bar">
-                <span>Booking List</span>
+                <span>My Bookings</span>
             </section>
             {/* Inner section */}
             <section className="inner-section">
