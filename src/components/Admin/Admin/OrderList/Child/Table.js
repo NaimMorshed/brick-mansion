@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 import './Child.css';
 import { Dropdown } from 'react-bootstrap';
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles } from '@material-ui/core/styles';
+const backdropUseStyles = makeStyles((theme) => ({ backdrop: { zIndex: theme.zIndex.drawer + 1, color: '#fff' } }));
 
 const Table = ({ data }) => {
+    // -------- BACKDROP --------
+    const backdropClasses = backdropUseStyles();
+    const [backOpen, setBackOpen] = React.useState(false);
+    const backdropClose = () => setBackOpen(false);
+    const backdropOpen = () => setBackOpen(!backOpen);
+
     const th3 = 'col-md-3 text-start';
     const th2 = 'col-md-2 text-start';
     const center = 'h-100 d-flex align-items-center custom'
@@ -10,13 +20,16 @@ const Table = ({ data }) => {
     const [localStatus, setLocalStatus] = useState(data.status);
 
     const modifyMongoData = props => {
+        backdropOpen();
         fetch(`https://protected-citadel-86567.herokuapp.com/update/${data._id}`, {
             method: 'PATCH',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({status: props})
         })
         .then(res => res.json())
-        .then(dat => alert('Updated, refresh to take effect'))
+        .then(dat => {
+            backdropClose();
+            alert('Updated')})
     }
 
     const clickedOn_Confirmed = () => {
@@ -81,6 +94,12 @@ const Table = ({ data }) => {
                 localStatus === 'Confirmed' ? <div className={th2}>{confirmed}</div> :
                 <div className={th2}>{cancelled}</div>
             }
+
+            {/* BACKDROP */}
+            <Backdrop className={backdropClasses.backdrop} open={backOpen}>
+                <CircularProgress color="inherit" />
+            </Backdrop>
+            {/* ----------- */}
         </div>
     );
 };

@@ -12,9 +12,9 @@
 }
 
 .img-section > img {
-    width: 50%;
+    max-width: 120px;
     border-radius: 10px;
-    margin: 10px;
+    margin: 30px 10px 10px 10px;
 }
 
 .icon-custom {
