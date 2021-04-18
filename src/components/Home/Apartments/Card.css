@@ -75,10 +75,12 @@
 .card-parent:hover {
     cursor: pointer;
 }
+
 .card-parent:hover .middle {
     opacity: 1;
     cursor: pointer;
 }
+
 .card-parent:hover .card-img {
     opacity: 0.5;
     cursor: pointer;
@@ -93,4 +95,15 @@
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
+}
+
+@media (max-width: 500px) {
+    .card-parent {
+        width: 110%;
+        margin: 20px 5px 20px 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .card-responsive > div {
+        padding: 0 !important;
+    }
 }

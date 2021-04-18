@@ -49,10 +49,10 @@ const Login = () => {
                 {/* <div className="mt-5"></div>
                 <div className="mt-5"></div> */}
 
-                <div className="parent-login-div">
+                <div className="parent-login-div text-dark">
                     <img style={imgStyle} src={logo} alt="" />
                     <h4>LOGIN TO <span className="sample-text">YOUR ACCOUNT</span></h4>
-                    <p><small className="blur-text">Get access to the mouth watering dishes</small></p>
+                    <p><small className="blur-text">Get access to the fabulous insight view</small></p>
 
                     <form className="login-form">
                         <div className="input-div d-flex align-items-center">

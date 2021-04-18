@@ -20,7 +20,7 @@
     background-size: cover;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     overflow: hidden;
@@ -77,4 +77,13 @@
     border-radius: 5px;
     font-style: italic;
     padding: 0 0 0 30px;
+}
+
+.vanish {
+    opacity: 0;
+}
+
+.home-button {
+    position: relative;
+    right: 20px;
 }

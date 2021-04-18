@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
 import './Child.css'
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router';
+const backdropUseStyles = makeStyles((theme) => ({ backdrop: { zIndex: theme.zIndex.drawer + 1, color: '#fff' } }));
 const axios = require('axios').default;
 
 const Child = () => {
+    // -------- BACKDROP --------
+    const backdropClasses = backdropUseStyles();
+    const [backOpen, setBackOpen] = React.useState(false);
+    const backdropClose = () => setBackOpen(false);
+    const backdropOpen = () => setBackOpen(!backOpen);
+
     const col12 = "col-md-12 input-form";
     const col6 = "col-md-6 input-form";
     const button = "btn btn-info submit-btn";
+    const history = useHistory();
     const [data, setData] = useState(
         {
             token: 'root',
@@ -29,6 +41,7 @@ const Child = () => {
 
     const submitHandler = event => {
         event.preventDefault();
+        backdropOpen();
         fetch('https://protected-citadel-86567.herokuapp.com/addData', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
@@ -36,10 +49,12 @@ const Child = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert('New apartment added ->refresh')
+                backdropClose();
+                alert('New apartment added (refresh)')
                 clearAll();
             })
             .catch(err => {
+                backdropClose();
                 alert(err)
             })
     }
@@ -73,13 +88,18 @@ const Child = () => {
         imageData.set('key', '2e6b03bfb364d782703bbc4ad0f67996');
         imageData.append('image', event.target.files[0])
 
+        backdropOpen();
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then(function (response) {
+                backdropClose();
                 const newData = { ...data };
                 newData.img = response.data.data.display_url;
                 setData(newData);
             })
-            .catch(error => alert(error));
+            .catch(error => {
+                backdropClose();
+                alert(error)
+            });
     }
 
     return (
@@ -87,7 +107,9 @@ const Child = () => {
 
             {/* Top Bar */}
             <section className="top-bar">
+                <span className="vanish"></span>
                 <span>Add Apartment</span>
+                <button onClick={() => history.push('/')} className="btn btn-info home-button">Home</button>
             </section>
             {/* Inner section */}
             <section className="inner-section">
@@ -131,6 +153,13 @@ const Child = () => {
                 </div>
 
             </section>
+
+            {/* BACKDROP */}
+            <Backdrop className={backdropClasses.backdrop} open={backOpen}>
+                <CircularProgress color="inherit" />
+            </Backdrop>
+            {/* ----------- */}
+
         </main>
     );
 };

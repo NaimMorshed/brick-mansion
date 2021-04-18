@@ -67,7 +67,7 @@ const Apartments = () => {
                 </div>
 
                 {/* CARD */}
-                <section>
+                <section className="card-responsive">
                     <div className="d-flex justify-content-center align-items-center p-5 flex-wrap">
                         {
                             apartments.length < 3

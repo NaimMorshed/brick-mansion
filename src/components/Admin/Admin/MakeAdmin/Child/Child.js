@@ -2,26 +2,42 @@ import React, { useEffect, useState } from 'react';
 import './Child.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router';
+const backdropUseStyles = makeStyles((theme) => ({ backdrop: { zIndex: theme.zIndex.drawer + 1, color: '#fff' } }));
 
 const Child = () => {
+    // -------- BACKDROP --------
+    const backdropClasses = backdropUseStyles();
+    const [backOpen, setBackOpen] = React.useState(false);
+    const backdropClose = () => setBackOpen(false);
+    const backdropOpen = () => setBackOpen(!backOpen);
+
     let email;
+    const history = useHistory();
     const fontAwesome = 'icon-color custom-ico';
 
     // Get admin list
     const [adminList, setAdminList] = useState([]);
     useEffect(() => {
+        backdropOpen();
         fetch('https://protected-citadel-86567.herokuapp.com/getData?token=admin')
             .then(res => res.json())
             .then(data => {
+                backdropClose();
                 setAdminList(data)
             })
             .catch(err => {
+                backdropClose();
                 alert(err);
             })
     }, [])
 
     const submitOperation = event => {
         event.preventDefault();
+        backdropOpen();
         fetch('https://protected-citadel-86567.herokuapp.com/addData', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
@@ -34,9 +50,11 @@ const Child = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert('New admin added ->refresh')
+                backdropClose();
+                alert('New admin added (refresh)')
             })
             .catch(err => {
+                backdropClose();
                 alert(err)
             })
     }
@@ -47,14 +65,17 @@ const Child = () => {
         const answer = window.confirm("Are you sure you want to delete?");
         if (answer) {
             const id = props._id;
+            backdropOpen();
             fetch(`https://protected-citadel-86567.herokuapp.com/delete/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
-                    alert('Admin delete ->refresh')
+                    backdropClose();
+                    alert('Admin delete (refresh)')
                 })
                 .catch(err => {
+                    backdropClose();
                     alert(err);
                 })
         }
@@ -64,7 +85,9 @@ const Child = () => {
         <main className="order-list-parent">
             {/* Top Bar */}
             <section className="top-bar">
+                <span className="vanish"></span>
                 <span>Make Admin</span>
+                <button onClick={() => history.push('/')} className="btn btn-info home-button">Home</button>
             </section>
             {/* Inner section */}
             <section className="inner-section">
@@ -93,6 +116,13 @@ const Child = () => {
                     </section>
                 </div>
             </section>
+
+            {/* BACKDROP */}
+            <Backdrop className={backdropClasses.backdrop} open={backOpen}>
+                <CircularProgress color="inherit" />
+            </Backdrop>
+            {/* ----------- */}
+
         </main>
     );
 };

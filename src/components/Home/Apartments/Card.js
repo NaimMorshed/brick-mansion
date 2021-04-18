@@ -58,25 +58,25 @@ const Card = (props) => {
                 {/* Footer Section */}
                 <div className="row-md-2 row-sm-2 pr-3 pl-3">
                     <div className="row">
-                        <div className="col-md-4 col-sm-4 flex-display">
+                        <div className="col-4 flex-display">
                             <div className="d-flex">
                                 <FontAwesomeIcon className="icon-color text-white mr-2" icon={faTh} />
-                                <p>{data.area} sqft</p>
+                                <p>{data.area}</p>
                             </div>
                         </div>
-                        <div className="col-md-2 col-sm-2 flex-display">
+                        <div className="col-2 flex-display">
                             <div className="d-flex">
                                 <FontAwesomeIcon className="icon-color text-white mr-2" icon={faBed} />
                                 <p>{data.rooms}</p>
                             </div>
                         </div>
-                        <div className="col-md-3 col-sm-3 flex-display">
+                        <div className="col-3 flex-display">
                             <div className="d-flex">
                                 <FontAwesomeIcon className="icon-color text-white mr-2" icon={faToilet} />
                                 <p>{data.bathrooms}</p>
                             </div>
                         </div>
-                        <div className="col-md-3 col-sm-3 flex-display">
+                        <div className="col-3 flex-display">
                             <div className="d-flex">
                                 <FontAwesomeIcon className="icon-color text-white mr-2" icon={faWarehouse} />
                                 <p>{data.garages}</p>
