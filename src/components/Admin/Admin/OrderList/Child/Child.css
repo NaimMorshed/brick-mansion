@@ -65,3 +65,16 @@
 .table-body {
     margin: 20px 0;
 }
+
+.custom {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.pending {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-style: italic;
+    padding: 0 0 0 30px;
+}

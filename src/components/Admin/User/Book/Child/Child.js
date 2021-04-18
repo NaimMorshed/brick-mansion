@@ -14,6 +14,7 @@ const Child = () => {
     const value = sessionStorage.getItem('contain');
     const [authentication, setAuthentication] = useContext(UserContext);
     const [cardType, setCardType] = useState("credit");
+    console.log(authentication.displayName);
 
     const obj = {
         area: sessionStorage.getItem('area'),
@@ -25,7 +26,8 @@ const Child = () => {
         price: sessionStorage.getItem('price'),
         rooms: sessionStorage.getItem('rooms'),
         token: authentication.email,
-        status: 'pending'
+        displayName: authentication.displayName,
+        status: 'Pending'
     }
 
     const creditClick = () => {

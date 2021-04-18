@@ -1,27 +1,25 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../../../../App';
 import './Child.css'
 import Table from './Table';
-const infoData = [
-    {
-        name: 'Naim Morshed',
-        email: 'naim@gmail.com',
-        apartment: 'St. Villa',
-        pay: 'Card',
-        status: 'Pending'
-    },
-    {
-        name: 'Sabit Hassan',
-        email: 'sabit@gmail.com',
-        apartment: 'St. Deep',
-        pay: 'Card',
-        status: 'Rejected'
-    }
-]
 
 const Child = () => {
     const th3 = 'col-md-3 text-start';
     const th2 = 'col-md-2 text-start';
-    const center = 'h-100 d-flex align-items-center'
+    const center = 'h-100 d-flex align-items-center custom'
+
+    const [bookings, setBookings] = useState([]);
+    useEffect(() => {
+        fetch('https://protected-citadel-86567.herokuapp.com/getAllBookings')
+            .then(res => res.json())
+            .then(data => {
+                setBookings(data)
+            })
+            .catch(err => {
+                alert(err);
+            })
+    }, [])
+
     return (
         <main className="order-list-parent">
             {/* Top Bar */}
@@ -37,13 +35,13 @@ const Child = () => {
                         <div className={th3}><h5 className={center}>Name</h5></div>
                         <div className={th3}><h5 className={center}>Email ID</h5></div>
                         <div className={th2}><h5 className={center}>Apartment</h5></div>
-                        <div className={th2}><h5 className={center}>Pay With</h5></div>
+                        <div className={th2}><h5 className={center}>Payed With</h5></div>
                         <div className={th2}><h5 className={center}>Status</h5></div>
                     </div>
 
                     {/* Table Body */}
                     {
-                        infoData.map(data => <Table data={data} />)
+                        bookings.map(data => <Table data={data} />)
                     }
 
                 </div>

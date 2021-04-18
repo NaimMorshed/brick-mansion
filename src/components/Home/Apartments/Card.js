@@ -24,7 +24,7 @@ const Card = (props) => {
                     <img className="card-img" src={data.img} alt="" />
                     {
                         data.status === 'Pending' ? <span className="status-pending">Pending</span>
-                        : data.status === 'Booked' ? <span className="status-booked">Booked</span>
+                        : data.status === 'Confirmed' ? <span className="status-booked">Confirmed</span>
                         : data.status === 'Cancelled' ? <span className="status-cancelled">Cancelled</span>
                         : <></>
                     }
