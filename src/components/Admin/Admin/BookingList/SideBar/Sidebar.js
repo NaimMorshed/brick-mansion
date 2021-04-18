@@ -31,8 +31,8 @@ const Sidebar = (props) => {
                     <FontAwesomeIcon className={fontAwesome} icon={faList} />
                     <span>Booking List</span>
                 </div>
-                <div onClick={() => props.handler(2)} className={listChild}>
-                    <FontAwesomeIcon className={fontAwesome} icon={faShoppingBasket} />
+                <div onClick={() => props.handler(2)} className={defaultSelection}>
+                    <FontAwesomeIcon className={fontAwesomeBlack} icon={faShoppingBasket} />
                     <span>My Bookings</span>
                 </div>
                 <div onClick={() => props.handler(3)} className={listChild}>
@@ -43,8 +43,8 @@ const Sidebar = (props) => {
                     <FontAwesomeIcon className={fontAwesome} icon={faUserPlus} />
                     <span>Make Admin</span>
                 </div>
-                <div onClick={() => props.handler(5)} className={defaultSelection}>
-                    <FontAwesomeIcon className={fontAwesomeBlack} icon={faThLarge} />
+                <div onClick={() => props.handler(5)} className={listChild}>
+                    <FontAwesomeIcon className={fontAwesome} icon={faThLarge} />
                     <span>Manage Apartment</span>
                 </div>
             </section>

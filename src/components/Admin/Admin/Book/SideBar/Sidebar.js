@@ -23,8 +23,8 @@ const Sidebar = (props) => {
             </section>
             {/* List section */}
             <section className={listParent}>
-                <div onClick={() => props.handler(0)} className={listChild}>
-                    <FontAwesomeIcon className={fontAwesome} icon={faShoppingCart} />
+                <div onClick={() => props.handler(0)} className={defaultSelection}>
+                    <FontAwesomeIcon className={fontAwesomeBlack} icon={faShoppingCart} />
                     <span>Book</span>
                 </div>
                 <div onClick={() => props.handler(1)} className={listChild}>
@@ -43,8 +43,8 @@ const Sidebar = (props) => {
                     <FontAwesomeIcon className={fontAwesome} icon={faUserPlus} />
                     <span>Make Admin</span>
                 </div>
-                <div onClick={() => props.handler(5)} className={defaultSelection}>
-                    <FontAwesomeIcon className={fontAwesomeBlack} icon={faThLarge} />
+                <div onClick={() => props.handler(5)} className={listChild}>
+                    <FontAwesomeIcon className={fontAwesome} icon={faThLarge} />
                     <span>Manage Apartment</span>
                 </div>
             </section>

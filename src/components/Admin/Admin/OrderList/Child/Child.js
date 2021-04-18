@@ -24,7 +24,7 @@ const Child = () => {
         <main className="order-list-parent">
             {/* Top Bar */}
             <section className="top-bar">
-                <span>Order List</span>
+                <span>Booking List</span>
             </section>
             {/* Inner section */}
             <section className="inner-section">
