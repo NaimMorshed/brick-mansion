@@ -10,3 +10,5 @@ hints:
 # Apartment card delete option available
 # Booking list -> all user bookings (only Admin)
 # My bookings -> personal bookings list
+
+Server side repo: https://github.com/NaimMorshed/brick-mansion_server
